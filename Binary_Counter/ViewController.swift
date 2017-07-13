@@ -42,8 +42,8 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BinaryCell", for: indexPath)
-//        cell.textLabel?.text = "10000"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BinaryCell", for: indexPath) as! BinaryCell
+        cell.BinaryLabel?.text = "\(pow(10, indexPath.row))"
         
         return cell
     }

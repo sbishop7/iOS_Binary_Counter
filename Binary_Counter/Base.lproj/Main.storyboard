@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BinaryCell" rowHeight="49" id="cJS-LP-pKT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BinaryCell" rowHeight="49" id="cJS-LP-pKT" customClass="BinaryCell" customModule="Binary_Counter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJS-LP-pKT" id="2dR-XS-Lkc">
@@ -57,7 +57,7 @@
                                                         <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkQ-nr-Ev3"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avs-dK-gql">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avs-dK-gql">
                                                     <rect key="frame" x="30" y="2.5" width="315" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="iME-Hf-vfj"/>
@@ -78,6 +78,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.26844810349999998" green="0.36093149629999999" blue="0.51475469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="BinaryLabel" destination="avs-dK-gql" id="Am3-ta-bKD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
