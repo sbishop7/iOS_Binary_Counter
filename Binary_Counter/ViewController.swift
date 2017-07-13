@@ -9,10 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var total = 0
+    
+    @IBOutlet weak var totalLabel: UILabel!
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func minusButtonPressed(_ sender: UIButton) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,3 +34,17 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 16
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BinaryCell", for: indexPath)
+//        cell.textLabel?.text = "10000"
+        
+        return cell
+    }
+}

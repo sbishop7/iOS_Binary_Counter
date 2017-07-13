@@ -21,15 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZvC-Ao-gRs">
-                                <rect key="frame" x="0.0" y="28" width="375" height="581"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZvC-Ao-gRs">
+                                <rect key="frame" x="0.0" y="28" width="375" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="cJS-LP-pKT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BinaryCell" rowHeight="49" id="cJS-LP-pKT">
                                         <rect key="frame" x="0.0" y="28" width="375" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJS-LP-pKT" id="2dR-XS-Lkc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZe-hz-gxk">
@@ -53,8 +53,11 @@
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkQ-nr-Ev3"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avs-dK-gql">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avs-dK-gql">
                                                     <rect key="frame" x="30" y="2.5" width="315" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="iME-Hf-vfj"/>
@@ -77,6 +80,9 @@
                                         <color key="backgroundColor" red="0.26844810349999998" green="0.36093149629999999" blue="0.51475469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KYd-JG-1oM"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUx-yR-eR9">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
@@ -91,13 +97,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZvC-Ao-gRs" secondAttribute="trailing" id="3fg-fX-gGQ"/>
                             <constraint firstItem="xUx-yR-eR9" firstAttribute="top" secondItem="ZvC-Ao-gRs" secondAttribute="bottom" id="Fgq-Wf-K21"/>
                             <constraint firstAttribute="trailing" secondItem="xUx-yR-eR9" secondAttribute="trailing" id="IDb-mX-7iF"/>
                             <constraint firstItem="xUx-yR-eR9" firstAttribute="leading" secondItem="ZvC-Ao-gRs" secondAttribute="leading" id="N6P-bn-gZL"/>
+                            <constraint firstItem="ZvC-Ao-gRs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VHq-Lx-ofh"/>
                             <constraint firstItem="xUx-yR-eR9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wkm-aZ-pFa"/>
+                            <constraint firstItem="ZvC-Ao-gRs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wiB-Pb-3JE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUx-yR-eR9" secondAttribute="bottom" id="wq7-CL-Wpy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="totalLabel" destination="xUx-yR-eR9" id="GO8-Qe-xZt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
