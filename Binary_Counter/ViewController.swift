@@ -14,16 +14,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
-    }
-    
-    @IBAction func minusButtonPressed(_ sender: UIButton) {
-    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = self
+        totalLabel.text = "Total: \(total)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +38,16 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BinaryCell", for: indexPath) as! BinaryCell
+        cell.delegate = self
         cell.BinaryLabel?.text = "\(pow(10, indexPath.row))"
         
         return cell
+    }
+}
+
+extension ViewController: BinaryTableViewCellDelegate {
+    func valueChangedBy(value: Int) {
+        total += value
+        totalLabel.text = "Total: \(total)"
     }
 }
